@@ -32,7 +32,7 @@ namespace DiFe
             services.AddControllers();
             services.AddCors();
             services.AddDatabaseDeveloperPageExceptionFilter();
-            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<AppDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DiFe", Version = "v1" });
